@@ -22,7 +22,7 @@ class App extends Component {
                         <Header />
                         <div style={containerStyle}>
                             <Switch>
-                                <Route exact path='/gettingStarted' component={Album} />
+                                <Route exact path='/' component={Album} />
                             </Switch>
                         </div>
                     </Fragment>
