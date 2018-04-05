@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 import { Sticker } from '../components'
 
 const style = {
@@ -30,4 +31,8 @@ Album.propTypes = {
     stickers: PropTypes.array.isRequired
 }
 
-export default Album
+const mapStateToProps = state => ({
+    stickers: state.AlbumReducer.stickers
+})
+
+export default connect(mapStateToProps)(Album)

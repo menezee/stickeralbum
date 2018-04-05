@@ -1,6 +1,8 @@
-import React, { Component, Fragment } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import React, { Component, Fragment } from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { Provider } from 'react-redux'
 
+import Store from './redux/Store'
 import { Header } from './components'
 import Album from './containers/Album'
 
@@ -13,21 +15,21 @@ const containerStyle = {
 class App extends Component {
 
     render() {
-        const stickerList = ['Batman', 'Robin', 'Riddler', 'Batman', 'Batman']
-
         return (
-            <BrowserRouter>
-                <Fragment>
-                    <Header />
-                    <div style={containerStyle}>
-                        <Switch>
-                            <Route exact path='/gettingStarted' render={props => <Album stickers={stickerList} {...props} />} />
-                        </Switch>
-                    </div>
-                </Fragment>
-            </BrowserRouter>
-        );
+            <Provider store={Store}>
+                <BrowserRouter>
+                    <Fragment>
+                        <Header />
+                        <div style={containerStyle}>
+                            <Switch>
+                                <Route exact path='/gettingStarted' component={Album} />
+                            </Switch>
+                        </div>
+                    </Fragment>
+                </BrowserRouter>
+            </Provider>
+        )
     }
 }
 
-export default App;
+export default App
