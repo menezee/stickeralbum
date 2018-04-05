@@ -22,7 +22,8 @@ const cardStyle = {
     border: '1px solid black',
     margin: '3px',
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    backgroundColor: 'lightyellow'
 }
 
 export const Sticker = props => (
